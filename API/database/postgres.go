@@ -36,7 +36,7 @@ func CreateTodo(todo models.Todo) (models.Todo, error) {
 }
 
 func GetTodos() ([]models.Todo, error) {
-	query := `SELECT id, name, completed FROM todos`
+	query := `SELECT * FROM todos`
 	rows, err := db.Query(query)
 	if err != nil {
 		return nil, err
@@ -56,7 +56,7 @@ func GetTodos() ([]models.Todo, error) {
 }
 
 func GetTodo(id int) (models.Todo, error) {
-	query := `SELECT id, name, comleted FROM todos WHERE id = $1`
+	query := `SELECT * FROM todos WHERE id = $1`
 	var todo models.Todo
 	err := db.QueryRow(query, id).Scan(&todo.ID, &todo.Name, &todo.Completed)
 	if err != nil {

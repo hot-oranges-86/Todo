@@ -4,10 +4,10 @@ import (
 	"log"
 
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 
 	"github.com/hot-oranges-86/Todo/database"
 	"github.com/hot-oranges-86/Todo/handlers"
+	"github.com/hot-oranges-86/Todo/middlewares"
 )
 
 func main() {
@@ -20,8 +20,7 @@ func main() {
 		log.Fatalf("Failed to connect to database: %s", err)
 	}
 
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	e.Use(middlewares.GetMiddlewares()...)
 
 	e.POST("/todos", handlers.CreateTodo)
 	e.GET("/todos", handlers.GetTodos)
