@@ -1,0 +1,31 @@
+/* Style for each list item */
+li {
+    list-style-type: none; /* Remove default list style */
+    display: flex; /* Use flexbox to align elements */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 10px; /* Add padding */
+    border-bottom: 1px solid #ccc; /* Add a border to separate items */
+}
+
+/* Style for the checkbox */
+nput[type="checkbox"] {
+    margin-right: 10px; /* Add space between the checkbox and other elements */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+}
+
+/* Style for the delete button */
+button {
+    background-color: #e74c3c; /* Red color for the button */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 6px 12px; /* Add padding */
+    border-radius: 4px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    transition: background-color 0.2s ease; /* Add transition for background color */
+}
+
+/* Hover effect for the delete button */
+button:hover {
+    background-color: #c0392b; /* Darker red color when hovering */
+}

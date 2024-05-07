@@ -36,7 +36,7 @@ func CreateTodo(todo models.Todo) (models.Todo, error) {
 }
 
 func GetTodos() ([]models.Todo, error) {
-	query := `SELECT * FROM todos`
+	query := `SELECT * FROM todos ORDER BY id`
 	rows, err := db.Query(query)
 	if err != nil {
 		return nil, err
