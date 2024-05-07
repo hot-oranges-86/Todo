@@ -13,7 +13,7 @@ var db *sql.DB
 
 func ConnectToPostgreSQL() error {
 	var err error
-	connStr := "dbname=todo user=postgres password=root sslmode=disable"
+	connStr := "dbname=todo user=todoapi password=ob1uh8j sslmode=disable"
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
